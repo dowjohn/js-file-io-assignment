@@ -9,7 +9,6 @@ const employee =
     .parseFromFilePath(
       path.resolve(__dirname, 'employee.json')
     )
-
 console.log(`is Employee? ${employee instanceof Employee}`)
 console.log(`parsed: ${util.inspect(employee)}`)
 
