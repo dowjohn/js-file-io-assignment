@@ -8,14 +8,6 @@ class Employee {
     this.title = title
     this.salary = salary
   }
-  static parseFromFilePath (path) {
-    let parsedObj = JSON.parse(fs.readFileSync(path, (err, data) => {
-      if (err) {
-        console.error(err)
-      }
-    }))
-    return new Employee(parsedObj.name, parsedObj.title, parsedObj.salary)
-  }
   promote (title, salary) {
     this.title = title
     this.salary = salary
