@@ -8,6 +8,17 @@ class Employee {
     this.title = title
     this.salary = salary
   }
+  static parseFromFilePath (path) {
+    return new Promise((resolve, reject) => {
+      fs.readFile((path), (err, data) => {
+        if (err) {
+          reject(err)
+        } else {
+          resolve(JSON.parse(data))
+        }
+      })
+    })
+  }
   promote (title, salary) {
     this.title = title
     this.salary = salary
